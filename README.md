@@ -1,4 +1,4 @@
-# DestinE Jupyter Notebook Tutorials for the Insula's Code Lab
+# DestinE Jupyter Notebook Tutorials for Insula Code Lab
 
 Welcome to the repository for DestinE Platform Jupyter Notebook Tutorials!
 
@@ -15,10 +15,11 @@ All examples are written in Python and are designed to work seamlessly with any 
 * Access DestinE Climate Adaptation Digital Twin data on the [cacheb](./cacheb/cacheb-quickstart.ipynb) ➡️ *upgraded access* required.
 * Discover DestinE Climate Adaptation Digital Twin [Data Streams](./DestineStreamer) on DestinEStreamer ➡️ *upgraded access* required.
 * Discover and access Copernicus ERA5 data with [Earth Data Hub](./EarthDataHub) Service examples.
-* Access data on the [Data Lake via EDEN](./EDEN/EDEN-example.ipynb) Service example.
+* Access data on the data lake via the [EDEN](./EDEN/EDEN-example.ipynb) service example.
 * Try out DestinE Climate Adaptation Digital Twin scenarios in [Insula](./Insula) ➡️ *upgraded access* required.
 * Compute the `Standard Evapotranspiration` variable from ERA5 data using the [Drought Assessment](./Insula/Drought_assessment.ipynb) example.
-* Create a [DEA](https://dea.destine.eu/web/) data story on Jupyter Notebook using [dea](./dea/create-asset/create-asset.ipynb) Service example.
+* Create a [DEA data story](./dea/create-asset/create-asset.ipynb) using the service example notebook.
+* Try out [destinepyauth](./misc/destinepyauth_example.ipynb) for harmonized authentication against DestinE platform services.
 
 Notebook templates are all a quickstart to DestinE Platform services. [Insula Code Lab](https://code.insula.destine.eu/) includes also ECMWF's Polytope and EUMETSAT's HDA examples in the user's own environment.
 
@@ -31,6 +32,7 @@ Stay tuned for more contents and feel free to contribute!
 * [DestineStreamer](https://streamer.destine.eu/) examples created by [SamCarraro](https://github.com/SamCarraro) from [GeoVille](https://www.geoville.com/).
 * [DEA](https://dea.destine.eu/web/) tutorials created by [Alia Space Systems](https://www.alia-space.com/).
 * [Insula](https://insula.destine.eu/) contributions by [Bea07](https://github.com/Bea07), [albeCGI](https://github.com/albeCGI), and [crossi202](https://github.com/crossi202) from [CGI](https://cgi.com).
+* [destinepyauth](https://github.com/SercoSPA/DestinE-Platform-AuthN) tutorial created by [purnelldj](https://github.com/purnelldj) from [Serco](https://www.serco.com/).
 
 ## Installation
 The CodeLab environment includes some Python packages pre-installed in the user's environment. The overall list of dependencies is provided in the file [requirements.txt](./requirements.txt).
@@ -65,6 +67,24 @@ ipython kernel install --user --name=my_env
 ```
 > **Note**: Do not forget to change the kernel to `my_env` using the upper-right button within the Jupyter user interface every time you want to run your code.
 > Occasionally, a stop/start of the service is required to apply environment changes. Users can manage the server stop/start commands via the *File* dropdown menu under *Hub Control Panel*.
+
+## Contributing
+Contributions are welcome! Because this repository is made of Jupyter notebooks, we use [pre-commit](https://pre-commit.com/) hooks to keep diffs reviewable (stripping volatile notebook metadata while **keeping figures**), to lint code cells, and to scan for accidentally committed secrets.
+
+Before opening a pull request:
+
+1. Install and enable the hooks (one-time, per clone):
+   ```
+   pip install pre-commit
+   pre-commit install
+   ```
+2. Run the hooks against everything and fix anything they flag:
+   ```
+   pre-commit run --all-files
+   ```
+   Some hooks (e.g. notebook metadata stripping) edit files in place — just re-stage the changes and commit again.
+
+The same checks run automatically in CI on every pull request, so running them locally first avoids a failed build.
 
 ## Contact
 If you have questions or need support with these examples contact the ➡️ [DestinE support](https://platform.destine.eu/support).
